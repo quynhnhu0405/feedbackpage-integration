@@ -1,0 +1,397 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #c04421;
+}
+
+
+.feedback-demo-container {
+  background: #FFF8ED;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(123, 75, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+  margin: auto;
+  position: relative;
+  flex: 0;
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.feedback-header h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.lang-switch {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+  color: rgb(0, 0, 0);
+}
+
+.lang-switch i {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.lang-switch .lang-btn {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.5;
+  font-weight: normal;
+  width: fit-content;
+  padding: 0;
+}
+
+.lang-btn.active {
+  opacity: 1;
+}
+
+.feedback-logo {
+  margin: 0.5rem 0 1.2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-logo img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #FFF8ED;
+  margin: 1rem 0;
+}
+
+.feedback-question {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.question-label {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SH Serif';
+  src: url('/fonts/SHSerif.woff2') format('woff2');
+}
+
+em {
+  font-family: 'SH Serif', serif;
+}
+
+.feedback-question h3 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.feedback-emojis {
+  width: 100%;
+  margin: 1.2rem 0 2.2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-emojis {
+  width: 100%;
+  margin: 1.2rem 0 2.2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.emoji-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
+}
+
+.emoji-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  aspect-ratio: 1 / 1.2;
+  background: transparent;
+}
+
+.emoji img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.emoji-label {
+  font-size: 0.85rem;
+  color: #a0361e;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.feedback-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem 0 0.2rem 0;
+  font-size: 0.92rem;
+  background: transparent;
+  font-family: 'Poppins', Arial, sans-serif;
+  border-top: 1px solid #c04421;
+}
+
+.step {
+  display: none;
+  margin-top: 3rem;
+}
+
+.step.step-active {
+  display: block;
+}
+
+.step-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.step-nav .prev-step {
+  margin-right: auto;
+}
+
+.step-nav button {
+  background: transparent;
+  color: #c04421;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  border: 2px solid #c04421;
+  border-radius: 8px;
+}
+
+.step-nav button:hover {
+  font-weight: 700;
+}
+
+.user-opinion {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .feedback-demo-container {
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .feedback-card {
+    width: 90vw;
+    max-width: 500px;
+    min-height: 480px;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .feedback-demo-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.2rem 0.5rem;
+  }
+
+  .feedback-card {
+    width: 98vw;
+    max-width: 420px;
+    min-height: 420px;
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+  }
+
+  .feedback-logo img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .feedback-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .feedback-question h3 {
+    font-size: 1rem;
+  }
+
+  .emoji img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feedback-footer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: #FFF8ED;
+  }
+
+  .step {
+    margin-top: 1rem;
+  }
+
+  .feedback-demo-container {
+    padding: 1.5rem 0.5rem;
+    min-height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+
+  .feedback-card {
+    padding: 1rem 0.3rem 1rem 0.3rem;
+    min-height: 340px;
+  }
+
+  .feedback-logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .feedback-header h2 {
+    font-size: 1rem;
+  }
+
+  .feedback-question h3 {
+    font-size: 0.95rem;
+  }
+  
+  .step-nav button {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .emoji-group {
+    gap: 0.5rem;
+  }
+
+  .emoji img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .emoji-label {
+    font-size: 0.7rem;
+  }
+
+  .feedback-footer {
+    font-size: 0.95rem;
+  }
+  .user-opinion
+  {
+    font-size: 0.95rem;
+  }
+  .prev-step
+  {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .feedback-card {
+    padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+    min-height: 220px;
+  }
+
+  .step {
+    margin-top: 0.5rem;
+  }
+
+  .feedback-demo-container {
+    padding: 1.5rem 0.5rem;
+    min-height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .feedback-logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .feedback-header h2 {
+    font-size: 0.9rem;
+  }
+
+  .feedback-question h3 {
+    font-size: 0.8rem;
+  }
+
+  .emoji img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .emoji-group {
+    gap: 0.5rem;
+  }
+
+  .emoji-label {
+    font-size: 0.6rem;
+  }
+  .user-opinion
+  {
+    font-size: 0.8rem;
+  }
+  .feedback-footer {
+    font-size: 0.8rem;
+  }
+  .prev-step
+  {
+    font-size: 0.8rem;
+  }
+}
