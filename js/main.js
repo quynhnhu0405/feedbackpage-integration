@@ -193,10 +193,9 @@ function setupSubmitFeedback() {
         const feedback = {
           experience: (typeof window._step1Emoji === 'number') ? window._step1Emoji + 1 : null,
           flavor: (typeof window._step2Emoji === 'number') ? window._step2Emoji + 1 : null,
-          suggestion: opinion || undefined // nếu rỗng thì không gửi
+          suggestion: opinion || undefined
         };
 
-        // Validate trước khi gửi
         if (!feedback.experience || !feedback.flavor) {
           alert(currentLang === 'vi'
             ? 'Vui lòng chọn emoji trước khi gửi.'
@@ -205,14 +204,12 @@ function setupSubmitFeedback() {
         }
 
         try {
-          // Gọi API đúng từ file api.js
           if (!window.wifiService || !window.wifiService.submitCustomerInfo) {
             console.error("wifiService chưa được khởi tạo đúng.");
             return;
         }        
           await window.wifiService.submitCustomerInfo(feedback);
 
-          // Cảm ơn người dùng
           const thankYou = currentLang === 'vi'
             ? `<h2>Cảm ơn bạn đã phản hồi!</h2><p>Ý kiến của bạn đã được ghi nhận.</p>`
             : `<h2>Thank you for your feedback!</h2><p>Your response has been recorded.</p>`;
@@ -228,7 +225,6 @@ function setupSubmitFeedback() {
               <p>© 2025 - U444 - All rights reserved</p>
             </footer>`;
 
-          // Ẩn nút đổi ngôn ngữ sau khi gửi
           const langSwitch = document.querySelector('.lang-switch');
           if (langSwitch) langSwitch.style.display = 'none';
           window._thankYouShown = true;
