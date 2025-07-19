@@ -184,30 +184,60 @@ function setupStepNavigation() {
 
 function setupSubmitFeedback() {
   document.querySelectorAll('.submit-feedback').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', async function () {
       if (currentStep === 2) {
         const step = document.querySelectorAll('.step')[currentStep];
         const card = step.querySelector('.feedback-card');
-        const opinion = card.querySelector('.user-opinion').value;
-        console.log('User opinion:', opinion);
-        // Thank you message by language
-        const thankYou = currentLang === 'vi'
-          ? `<h2>Cảm ơn bạn đã phản hồi!</h2><p>Ý kiến của bạn đã được ghi nhận.</p>`
-          : `<h2>Thank you for your feedback!</h2><p>Your response has been recorded.</p>`;
-        card.innerHTML = `<div class="feedback-logo"> 
-                            <img src="assets/images/logo.png" alt="The BBQ House Logo" /> 
-                          </div>
-                          <div style="text-align:center;padding:2rem 1rem;">
-                            ${thankYou}
-                          </div>
-                          <footer class="feedback-footer">
-                            <p>© 2025 - U444 - All rights reserved</p>
-                          </footer>`;
-        // Hide lang-switch
-        const langSwitch = document.querySelector('.lang-switch');
-        if (langSwitch) langSwitch.style.display = 'none';
-        // Mark thank you as shown
-        window._thankYouShown = true;
+        const opinion = card.querySelector('.user-opinion').value.trim();
+
+        const feedback = {
+          experience: (typeof window._step1Emoji === 'number') ? window._step1Emoji + 1 : null,
+          flavor: (typeof window._step2Emoji === 'number') ? window._step2Emoji + 1 : null,
+          suggestion: opinion || undefined // nếu rỗng thì không gửi
+        };
+
+        // Validate trước khi gửi
+        if (!feedback.experience || !feedback.flavor) {
+          alert(currentLang === 'vi'
+            ? 'Vui lòng chọn emoji trước khi gửi.'
+            : 'Please select an emoji before submitting.');
+          return;
+        }
+
+        try {
+          // Gọi API đúng từ file api.js
+          if (!window.wifiService || !window.wifiService.submitCustomerInfo) {
+            console.error("wifiService chưa được khởi tạo đúng.");
+            return;
+        }        
+          await window.wifiService.submitCustomerInfo(feedback);
+
+          // Cảm ơn người dùng
+          const thankYou = currentLang === 'vi'
+            ? `<h2>Cảm ơn bạn đã phản hồi!</h2><p>Ý kiến của bạn đã được ghi nhận.</p>`
+            : `<h2>Thank you for your feedback!</h2><p>Your response has been recorded.</p>`;
+
+          card.innerHTML = `
+            <div class="feedback-logo">
+              <img src="assets/images/logo.png" alt="The BBQ House Logo" />
+            </div>
+            <div style="text-align:center;padding:2rem 1rem;">
+              ${thankYou}
+            </div>
+            <footer class="feedback-footer">
+              <p>© 2025 - U444 - All rights reserved</p>
+            </footer>`;
+
+          // Ẩn nút đổi ngôn ngữ sau khi gửi
+          const langSwitch = document.querySelector('.lang-switch');
+          if (langSwitch) langSwitch.style.display = 'none';
+          window._thankYouShown = true;
+        } catch (err) {
+          console.error("Error submitting feedback:", err);
+          card.innerHTML += `<div style='color:red;text-align:center;margin-top:1rem;'>
+            ${currentLang === 'vi' ? 'Gửi phản hồi thất bại. Vui lòng thử lại.' : 'Failed to submit feedback. Please try again.'}
+          </div>`;
+        }
       }
     });
   });
@@ -255,6 +285,8 @@ function setupEmojiSelection() {
       img.src = `assets/images/${emoji.icon}-dark.png`;
 
       updateNextButtonState();
+      if (currentStep === 0) window._step1Emoji = idx;
+      if (currentStep === 1) window._step2Emoji = idx;
     });
   });
 }
