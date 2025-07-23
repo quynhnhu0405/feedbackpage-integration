@@ -2,7 +2,7 @@
 const feedbackData = {
   en: [
     {
-      header: 'U444 <em>appreciates</em> all your feelings ',
+      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
       questionLabel: 'QUESTION 1',
       question: 'HOW WAS YOUR <strong>EXPERIENCE</strong> AT U444 TODAY?',
       emojis: [
@@ -15,7 +15,7 @@ const feedbackData = {
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 <em>appreciates</em> all your feelings ',
+      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
       questionLabel: 'QUESTION 2',
       question: 'HOW SATISFYING WAS <strong>THE FLAVOR</strong> OF YOUR MEAL?',
       emojis: [
@@ -28,7 +28,7 @@ const feedbackData = {
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 <em>appreciates</em> all your feelings ',
+      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
       questionLabel: 'QUESTION 3',
       question: 'ANY ADDITIONAL <strong>SUGGESTIONS</strong>?',
       placeholder: 'Type your opinion here...',
@@ -37,7 +37,7 @@ const feedbackData = {
   ],
   vi: [
     {
-      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
       questionLabel: 'CÂU HỎI 1',
       question: '<strong>TRẢI NGHIỆM </strong> CỦA BẠN TẠI U444 HÔM NAY THẾ NÀO?',
       emojis: [
@@ -50,7 +50,7 @@ const feedbackData = {
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
       questionLabel: 'CÂU HỎI 2',
       question: 'MỨC ĐỘ HÀI LÒNG CỦA BẠN VỀ <strong>BỮA ĂN</strong> HÔM NAY',
       emojis: [
@@ -63,7 +63,7 @@ const feedbackData = {
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
       questionLabel: 'CÂU HỎI 3',
       question: 'BẠN <strong>ĐỀ XUẤT GÌ THÊM</strong> KHÔNG?',
       placeholder: 'Nhập ý kiến của bạn ở đây...',
