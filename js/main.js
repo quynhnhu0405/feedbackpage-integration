@@ -2,70 +2,84 @@
 const feedbackData = {
   en: [
     {
-      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
-      questionLabel: 'QUESTION 1',
-      question: 'HOW WAS YOUR <strong>EXPERIENCE</strong> AT U444 TODAY?',
+      header: 'U444 <em>appreciates</em> your support',
+      questionLabel: 'Table Number',
+      question: 'Please enter the <em>table number</em> before starting feedback.',
+      placeholder: 'Enter table number...',
+      footer: '© 2025 - U444 - All rights reserved'
+    },
+    {
+      header: 'U444 <em>appreciates</em> all your feelings',
+      questionLabel: 'Question 1',
+      question: 'How was your <em>experience</em> at U444 today?',
       emojis: [
-        { icon: 'bad', label: 'BAD' },
-        { icon: 'not-good', label: 'NOT GOOD' },
-        { icon: 'okay', label: 'OKAY' },
-        { icon: 'good', label: 'GOOD' },
-        { icon: 'wow', label: 'WOW' }
+        { icon: 'bad', label: 'Bad' },
+        { icon: 'not-good', label: 'Not Good' },
+        { icon: 'okay', label: 'Okay' },
+        { icon: 'good', label: 'Good' },
+        { icon: 'wow', label: 'Wow' }
       ],
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
-      questionLabel: 'QUESTION 2',
-      question: 'HOW SATISFYING WAS <strong>THE FLAVOR</strong> OF YOUR MEAL?',
+      header: 'U444 <em>appreciates</em> all your feelings',
+      questionLabel: 'Question 2',
+      question: 'How satisfying was <em>the flavor</em> of your meal?',
       emojis: [
-        { icon: 'bad', label: 'BAD' },
-        { icon: 'not-good', label: 'NOT GOOD' },
-        { icon: 'okay', label: 'OKAY' },
-        { icon: 'good', label: 'GOOD' },
-        { icon: 'wow', label: 'WOW' }
+        { icon: 'bad', label: 'Bad' },
+        { icon: 'not-good', label: 'Not Good' },
+        { icon: 'okay', label: 'Okay' },
+        { icon: 'good', label: 'Good' },
+        { icon: 'wow', label: 'Wow' }
       ],
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 <strong>APPRECIATES</strong> ALL YOUR FEELINGS',
-      questionLabel: 'QUESTION 3',
-      question: 'ANY ADDITIONAL <strong>SUGGESTIONS</strong>?',
+      header: 'U444 <em>appreciates</em> all your feelings',
+      questionLabel: 'Question 3',
+      question: 'Any additional <em>suggestions</em>?',
       placeholder: 'Type your opinion here...',
       footer: '© 2025 - U444 - All rights reserved'
     }
   ],
   vi: [
     {
-      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
-      questionLabel: 'CÂU HỎI 1',
-      question: '<strong>TRẢI NGHIỆM </strong> CỦA BẠN TẠI U444 HÔM NAY THẾ NÀO?',
+      header: 'U444 trân trọng sự hỗ trợ của bạn',
+      questionLabel: 'Số bàn',
+      question: 'Vui lòng nhập <em>số bàn</em> trước khi bắt đầu phản hồi.',
+      placeholder: 'Nhập số bàn...',
+      footer: '© 2025 - U444 - All rights reserved'
+    },
+    {
+      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      questionLabel: 'Câu hỏi 1',
+      question: '<em>Trải nghiệm</em> của bạn tại U444 hôm nay thế nào?',
       emojis: [
-        { icon: 'bad', label: 'TỆ' },
-        { icon: 'not-good', label: 'KHÔNG TỐT' },
-        { icon: 'okay', label: 'ỔN' },
-        { icon: 'good', label: 'TỐT' },
-        { icon: 'wow', label: 'TUYỆT' }
+        { icon: 'bad', label: 'Tệ' },
+        { icon: 'not-good', label: 'Không tốt' },
+        { icon: 'okay', label: 'Ổn' },
+        { icon: 'good', label: 'Tốt' },
+        { icon: 'wow', label: 'Tuyệt' }
       ],
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
-      questionLabel: 'CÂU HỎI 2',
-      question: 'MỨC ĐỘ HÀI LÒNG CỦA BẠN VỀ <strong>BỮA ĂN</strong> HÔM NAY',
+      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      questionLabel: 'Câu hỏi 2',
+      question: 'Mức độ hài lòng của bạn về <em>bữa ăn</em> hôm nay',
       emojis: [
-        { icon: 'bad', label: 'TỆ' },
-        { icon: 'not-good', label: 'KHÔNG TỐT' },
-        { icon: 'okay', label: 'ỔN' },
-        { icon: 'good', label: 'TỐT' },
-        { icon: 'wow', label: 'TUYỆT' }
+        { icon: 'bad', label: 'Tệ' },
+        { icon: 'not-good', label: 'Không tốt' },
+        { icon: 'okay', label: 'Ổn' },
+        { icon: 'good', label: 'Tốt' },
+        { icon: 'wow', label: 'Tuyệt' }
       ],
       footer: '© 2025 - U444 - All rights reserved'
     },
     {
-      header: 'U444 TRÂN TRỌNG MỌI <em>CẢM NHẬN</em> CỦA BẠN',
-      questionLabel: 'CÂU HỎI 3',
-      question: 'BẠN <strong>ĐỀ XUẤT GÌ THÊM</strong> KHÔNG?',
+      header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
+      questionLabel: 'Câu hỏi 3',
+      question: 'Bạn <em>đề xuất</em> gì thêm không?',
       placeholder: 'Nhập ý kiến của bạn ở đây...',
       footer: '© 2025 - U444 - All rights reserved'
     }
@@ -74,23 +88,25 @@ const feedbackData = {
 
 let currentStep = 0;
 let currentLang = 'en';
+let tableNumber = '';
 
 function showStep(stepIdx) {
   const steps = document.querySelectorAll('.step');
   steps.forEach((step, i) => {
     step.classList.toggle('step-active', i === stepIdx);
   });
-  // Show lang-switch for steps 0, 1, 2
   const langSwitch = document.querySelector('.lang-switch');
   if (langSwitch) {
-    langSwitch.style.display = (stepIdx === 2 && window._thankYouShown) ? 'none' : '';
+    langSwitch.style.display = (stepIdx === 3 && window._thankYouShown) ? 'none' : '';
   }
   renderFeedbackCard(stepIdx, currentLang);
-  if (stepIdx === 0 || stepIdx === 1) {
+  if (stepIdx === 0) {
+    setupTableNumberInput();
+  } else if (stepIdx === 1 || stepIdx === 2) {
     updateNextButtonState();
     setupEmojiSelection();
     setupStepNavigation();
-  } else if (stepIdx === 2) {
+  } else if (stepIdx === 3) {
     setupSubmitFeedback();
   }
 }
@@ -101,7 +117,29 @@ function renderFeedbackCard(stepIdx, lang) {
   const data = feedbackData[lang][stepIdx];
   if (!data) return;
 
-  if (stepIdx === 0 || stepIdx === 1) {
+  if (stepIdx === 0) {
+    card.innerHTML = `
+      <header class="feedback-header">
+        <h2>${data.header}</h2>
+      </header>
+      <div class="feedback-logo">
+        <img src="assets/images/logo.png" alt="The BBQ House Logo" />
+      </div>
+      <div class="feedback-question">
+        <span class="question-label">${data.questionLabel}</span>
+        <h3>${data.question}</h3>
+      </div>
+      <div class="feedback-question">
+        <input class="table-number-input" type="text" placeholder="${data.placeholder}" value="${tableNumber}" />
+      </div>
+      <div class="step-nav">
+        <button class="next-step">Next</button>
+      </div>
+      <footer class="feedback-footer">
+        <p>${data.footer}</p>
+      </footer>
+    `;
+  } else if (stepIdx === 1 || stepIdx === 2) {
     card.innerHTML = `
       <header class="feedback-header">
         <h2>${data.header}</h2>
@@ -130,7 +168,7 @@ function renderFeedbackCard(stepIdx, lang) {
         <p>${data.footer}</p>
       </footer>
     `;
-  } else if (stepIdx === 2) {
+  } else if (stepIdx === 3) {
     card.innerHTML = `
       <header class="feedback-header">
         <h2>${data.header}</h2>
@@ -173,10 +211,38 @@ function setupLanguageSwitcher() {
   });
 }
 
+function setupTableNumberInput() {
+  const step = document.querySelector('.step.step-active');
+  const input = step.querySelector('.table-number-input');
+  const nextBtn = step.querySelector('.next-step');
+  if (!input || !nextBtn) return;
+  input.addEventListener('input', function() {
+    tableNumber = input.value.trim();
+    nextBtn.disabled = !tableNumber;
+    if (nextBtn.disabled) {
+      nextBtn.classList.add('disabled');
+    } else {
+      nextBtn.classList.remove('disabled');
+    }
+  });
+  nextBtn.disabled = !tableNumber;
+  if (nextBtn.disabled) {
+    nextBtn.classList.add('disabled');
+  } else {
+    nextBtn.classList.remove('disabled');
+  }
+  nextBtn.addEventListener('click', function() {
+    if (tableNumber) {
+      currentStep = 1;
+      showStep(currentStep);
+    }
+  });
+}
+
 function setupStepNavigation() {
   document.querySelectorAll('.next-step').forEach(btn => {
     btn.addEventListener('click', function() {
-      currentStep = Math.min(currentStep + 1, 2);
+      currentStep = Math.min(currentStep + 1, 3);
       showStep(currentStep);
     });
   });
@@ -185,30 +251,30 @@ function setupStepNavigation() {
 function setupSubmitFeedback() {
   document.querySelectorAll('.submit-feedback').forEach(btn => {
     btn.addEventListener('click', async function () {
-      if (currentStep === 2) {
+      if (currentStep === 3) {
         const step = document.querySelectorAll('.step')[currentStep];
         const card = step.querySelector('.feedback-card');
         const opinion = card.querySelector('.user-opinion').value.trim();
 
         const feedback = {
+          tableNumber,
           experience: (typeof window._step1Emoji === 'number') ? window._step1Emoji + 1 : null,
           flavor: (typeof window._step2Emoji === 'number') ? window._step2Emoji + 1 : null,
           suggestion: opinion || undefined
         };
 
-        if (!feedback.experience || !feedback.flavor) {
+        if (!feedback.tableNumber) {
           alert(currentLang === 'vi'
-            ? 'Vui lòng chọn emoji trước khi gửi.'
-            : 'Please select an emoji before submitting.');
+            ? 'Vui lòng nhập số bàn trước khi gửi.'
+            : 'Please enter the table number before submitting.');
           return;
         }
-
         try {
-          if (!window.wifiService || !window.wifiService.submitCustomerInfo) {
-            console.error("wifiService chưa được khởi tạo đúng.");
+          if (!window.feedbackService || !window.feedbackService.submitCustomerInfo) {
+            console.error("feedbackService chưa được khởi tạo đúng.");
             return;
         }        
-          await window.wifiService.submitCustomerInfo(feedback);
+          await window.feedbackService.submitCustomerInfo(feedback);
 
           const thankYou = currentLang === 'vi'
             ? `<h2>Cảm ơn bạn đã phản hồi!</h2><p>Ý kiến của bạn đã được ghi nhận.</p>`
@@ -281,15 +347,14 @@ function setupEmojiSelection() {
       img.src = `assets/images/${emoji.icon}-dark.png`;
 
       updateNextButtonState();
-      if (currentStep === 0) window._step1Emoji = idx;
-      if (currentStep === 1) window._step2Emoji = idx;
+      if (currentStep === 1) window._step1Emoji = idx;
+      if (currentStep === 2) window._step2Emoji = idx;
     });
   });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   setupLanguageSwitcher();
-  setupStepNavigation();
   showStep(0);
   setupSubmitFeedback();
 }); 

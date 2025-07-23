@@ -86,7 +86,7 @@ body {
 
 .question-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   margin-bottom: 0.2rem;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -214,22 +214,45 @@ em {
   box-sizing: border-box;
   font-family: 'Poppins', Arial, sans-serif;
 }
+.table-number-input
+{
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
 
 @media (max-width: 1200px) {
-  .feedback-demo-container {
-    gap: 1.5rem;
-    padding: 1.5rem 0.5rem;
+  .feedback-demo-container
+  {
+    width: 100%;
+    max-width: unset;
   }
 
   .feedback-card {
     width: 90vw;
-    max-width: 500px;
     min-height: 480px;
     padding: 2rem 1rem 1rem 1rem;
   }
+  .feedback-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .feedback-question h3 {
+    font-size: 1.3rem;
+  }
+
 }
 
 @media (max-width: 900px) {
+  .feedback-demo-container
+  {
+    width: 100%;
+    max-width: unset;
+  }
   .feedback-demo-container {
     flex-direction: column;
     align-items: center;
@@ -237,24 +260,17 @@ em {
     padding: 1.2rem 0.5rem;
   }
 
-  .feedback-card {
-    width: 98vw;
-    max-width: 420px;
-    min-height: 420px;
-    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
-  }
-
   .feedback-logo img {
-    width: 72px;
-    height: 72px;
+    width: 100px;
+    height: 100px;
   }
 
   .feedback-header h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .feedback-question h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .emoji img {
