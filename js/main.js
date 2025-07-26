@@ -248,6 +248,20 @@ function setupStepNavigation() {
   });
 }
 
+function renderEmoji(emoji) {
+  switch (emoji) {
+    case 1:
+      return 'Bad';
+    case 2:
+      return 'Not Good';
+    case 3:
+      return 'Okay';
+    case 4:
+      return 'Good';
+    case 5:
+      return 'Wow';
+  }
+  }
 function setupSubmitFeedback() {
   document.querySelectorAll('.submit-feedback').forEach(btn => {
     btn.addEventListener('click', async function () {
@@ -279,13 +293,18 @@ function setupSubmitFeedback() {
           const thankYou = currentLang === 'vi'
             ? `<h2>Cảm ơn bạn đã phản hồi!</h2><p>Ý kiến của bạn đã được ghi nhận.</p>`
             : `<h2>Thank you for your feedback!</h2><p>Your response has been recorded.</p>`;
-
+          const feedbackSummary = currentLang === 'vi'
+            ? `<h3>Tóm tắt phản hồi</h3><table><tr><td><b>Trải nghiệm</b></td><td>${renderEmoji(feedback.experience)}</td></tr><tr><td><b>Mùi vị</b></td><td>${renderEmoji(feedback.flavor)}</td></tr><tr><td><b>Đề xuất</b></td><td>${feedback.suggestion || 'None'}</td></tr></table>`
+            : `<h3>Feedback Summary</h3><table><tr><td><b>Experience</b></td><td>${renderEmoji(feedback.experience)}</td></tr><tr><td><b>Flavor</b></td><td>${renderEmoji(feedback.flavor)}</td></tr><tr><td><b>Suggestion</b></td><td>${feedback.suggestion || 'None'}</td></tr></table>`;
           card.innerHTML = `
             <div class="feedback-logo">
               <img src="assets/images/logo.png" alt="The BBQ House Logo" />
             </div>
-            <div style="text-align:center;padding:2rem 1rem;">
+            <div style="text-align:center;padding:2rem 1rem 1rem 1rem;">
               ${thankYou}
+            </div>
+            <div class="feedback-answer">
+              ${feedbackSummary}
             </div>
             <footer class="feedback-footer">
               <p>© 2025 - U444 - All rights reserved</p>

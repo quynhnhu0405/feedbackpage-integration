@@ -224,7 +224,22 @@ em {
   box-sizing: border-box;
   font-family: 'Poppins', Arial, sans-serif;
 }
-
+.feedback-answer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.feedback-answer table td {
+  padding: 0.5rem;
+  border: 1px solid #383838;
+}
+.feedback-answer h3 {
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
 @media (max-width: 1200px) {
   .feedback-demo-container
   {
@@ -233,7 +248,7 @@ em {
   }
 
   .feedback-card {
-    width: 90vw;
+    width: 70vw;
     min-height: 480px;
     padding: 2rem 1rem 1rem 1rem;
   }
