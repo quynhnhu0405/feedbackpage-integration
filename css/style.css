@@ -116,13 +116,6 @@ em {
   justify-content: center;
 }
 
-.feedback-emojis {
-  width: 100%;
-  margin: 1.2rem 0 2.2rem 0;
-  display: flex;
-  justify-content: center;
-}
-
 .emoji-group {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -214,8 +207,7 @@ em {
   box-sizing: border-box;
   font-family: 'Poppins', Arial, sans-serif;
 }
-.table-number-input
-{
+.table-number-input {
   width: 100%;
   padding: 0.7rem 1rem;
   font-size: 1rem;
