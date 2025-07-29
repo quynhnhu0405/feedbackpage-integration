@@ -30,7 +30,7 @@ body {
 }
 
 .feedback-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
 }
@@ -52,7 +52,7 @@ body {
   background: none;
   border: none;
   color: rgb(0, 0, 0);
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
   opacity: 0.5;
   font-weight: normal;
@@ -86,7 +86,7 @@ body {
 
 .question-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-bottom: 0.2rem;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -103,15 +103,15 @@ em {
 
 .feedback-question h3 {
   font-family: 'Poppins', Arial, sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin: 0;
   line-height: 1.4;
-  font-weight: 500;
 }
 
 .feedback-emojis {
   width: 100%;
-  margin: 1.2rem 0 2.2rem 0;
+  margin: 1.2rem 0;
   display: flex;
   justify-content: center;
 }
@@ -156,7 +156,7 @@ em {
   width: 100%;
   text-align: center;
   padding: 0.7rem 0 0.2rem 0;
-  font-size: 0.92rem;
+  font-size: 1rem;
   background: transparent;
   font-family: 'Poppins', Arial, sans-serif;
   border-top: 1px solid #c04421;
@@ -174,7 +174,7 @@ em {
 .step-nav {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .step-nav .prev-step {
@@ -197,41 +197,6 @@ em {
 .step-nav button:hover {
   font-weight: 700;
 }
-
-.user-opinion {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
-}
-.table-number-input {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
-}
-.feedback-answer table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-.feedback-answer table td {
-  padding: 0.5rem;
-  border: 1px solid #383838;
-}
-.feedback-answer h3 {
-  font-size: 1.15rem;
-  text-align: center;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-  margin-top: 0;
-}
 @media (max-width: 1200px) {
   .feedback-demo-container
   {
@@ -245,11 +210,12 @@ em {
     padding: 2rem 1rem 1rem 1rem;
   }
   .feedback-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .feedback-question h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
 }
@@ -277,7 +243,8 @@ em {
   }
 
   .feedback-question h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
 
   .emoji img {
@@ -322,11 +289,12 @@ em {
   }
 
   .feedback-header h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .feedback-question h3 {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
+    font-weight: 600;
   }
   
   .step-nav button {
@@ -387,11 +355,12 @@ em {
   }
 
   .feedback-header h2 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .feedback-question h3 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 
   .emoji img {

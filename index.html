@@ -1,141 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Feedback U444</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7011aa09f0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <link id="favicon" rel="icon" href="assets/images/favicon.png" type="image/x-icon">
-</head>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Feedback U444</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7011aa09f0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+        <link id="favicon" rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    </head>
 
-<body>
-    <div class="feedback-demo-container">
-        <div class="lang-switch">
-            <i class="fa-solid fa-globe"></i>
-            <button class="lang-btn" data-lang="vi">VN</button>
-            <span class="divider">|</span>
-            <button class="lang-btn active" data-lang="en">EN</button>
+    <body>
+        <div class="feedback-demo-container">
+            <div class="lang-switch">
+                <i class="fa-solid fa-globe"></i>
+                <button class="lang-btn" data-lang="vi">VN</button>
+                <span class="divider">|</span>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+            <section class="step" data-step="1">
+                <section class="feedback-card">
+                    <header class="feedback-header">
+                        <h2></h2>
+                    </header>
+                    <div class="feedback-logo">
+                        <img src="assets/images/logo.png" alt="The BBQ House Logo"/>
+                    </div>
+                    <div class="feedback-question">
+                        <span class="question-label"></span>
+                        <h3></h3>
+                    </div>
+                    <div class="feedback-emojis">
+                        <div class="emoji-group">
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/bad-light.png" alt="BAD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/not-good-light.png" alt="NOT GOOD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/okay-light.png" alt="OKAY"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/good-light.png" alt="GOOD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/wow-light.png" alt="WOW"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="next-step">Next</button>
+                    </div>
+                    <footer class="feedback-footer">
+                        <p></p>
+                    </footer>
+                </section>
+            </section>
+            <section class="step" data-step="2">
+                <section class="feedback-card">
+                    <header class="feedback-header">
+                        <h2></h2>
+                    </header>
+                    <div class="feedback-logo">
+                        <img src="assets/images/logo.png" alt="The BBQ House Logo"/>
+                    </div>
+                    <div class="feedback-question">
+                        <span class="question-label"></span>
+                        <h3></h3>
+                    </div>
+                    <div class="feedback-emojis">
+                        <div class="emoji-group">
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/bad-light.png" alt="BAD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/not-good-light.png" alt="NOT GOOD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/okay-light.png" alt="OKAY"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/good-light.png" alt="GOOD"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                            <div class="emoji-item">
+                                <span class="emoji"><img src="assets/images/wow-light.png" alt="WOW"/></span>
+                                <span class="emoji-label"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="next-step">Next</button>
+                    </div>
+                    <footer class="feedback-footer">
+                        <p></p>
+                    </footer>
+                </section>
+            </section>
         </div>
-        <section class="step step-active" data-step="0">
-            <section class="feedback-card">
-                <header class="feedback-header">
-                    <h2></h2>
-                </header>
-                <div class="feedback-logo">
-                    <img src="assets/images/logo.png" alt="The BBQ House Logo" />
-                </div>
-                <div class="feedback-question">
-                    <span class="question-label"></span>
-                    <h3></h3>
-                </div>
-                <div class="feedback-question">
-                    <input class="table-number-input" type="text" placeholder="" value="" />
-                </div>
-                <div class="step-nav">
-                    <button class="next-step">Next</button>
-                </div>
-                <footer class="feedback-footer">
-                    <p></p>
-                </footer>
-            </section>
-        </section>
-        <section class="step" data-step="1">
-            <section class="feedback-card">
-                <header class="feedback-header">
-                    <h2></h2>
-                </header>
-                <div class="feedback-logo">
-                    <img src="assets/images/logo.png" alt="The BBQ House Logo" />
-                </div>
-                <div class="feedback-question">
-                    <span class="question-label"></span>
-                    <h3></h3>
-                </div>
-                <div class="feedback-emojis">
-                    <div class="emoji-group">
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/bad-light.png" alt="BAD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/not-good-light.png" alt="NOT GOOD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/okay-light.png" alt="OKAY" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/good-light.png" alt="GOOD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/wow-light.png" alt="WOW" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-nav">
-                    <button class="next-step">Next</button>
-                </div>
-                <footer class="feedback-footer">
-                    <p></p>
-                </footer>
-            </section>
-        </section>
-        <section class="step" data-step="2">
-            <section class="feedback-card">
-                <header class="feedback-header">
-                    <h2></h2>
-                </header>
-                <div class="feedback-logo">
-                    <img src="assets/images/logo.png" alt="The BBQ House Logo" />
-                </div>
-                <div class="feedback-question">
-                    <span class="question-label"></span>
-                    <h3></h3>
-                </div>
-                <div class="feedback-emojis">
-                    <div class="emoji-group">
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/bad-light.png" alt="BAD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/not-good-light.png" alt="NOT GOOD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/okay-light.png" alt="OKAY" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/good-light.png" alt="GOOD" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                        <div class="emoji-item">
-                            <span class="emoji"><img src="assets/images/wow-light.png" alt="WOW" /></span>
-                            <span class="emoji-label"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-nav">
-                    <button class="next-step">Next</button>
-                </div>
-                <footer class="feedback-footer">
-                    <p></p>
-                </footer>
-            </section>
-        </section>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="utils/api.js"></script>
-    <script src="js/main.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="utils/api.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>
