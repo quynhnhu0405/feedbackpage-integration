@@ -2,6 +2,15 @@
 const feedbackData = {
   en: [
     {
+      header: 'Welcome to U444',
+      questionLabel: 'Table Information',
+      question: 'Please enter your table number to begin',
+      placeholder: 'Enter table number',
+      footer: '© 2025 - U444 - All rights reserved',
+      continueButton: 'Continue',
+      tableNote: 'Please enter your table number to continue'
+    },
+    {
       header: 'U444 <em>appreciates</em> all your feelings',
       questionLabel: 'Question 1',
       question: 'May we ask how our service this evening met your expectations?',
@@ -31,6 +40,15 @@ const feedbackData = {
     }
   ],
   vi: [
+    {
+      header: 'Chào mừng đến với U444',
+      questionLabel: 'Thông tin bàn',
+      question: 'Vui lòng nhập số bàn để bắt đầu',
+      placeholder: 'Nhập số bàn ',
+      footer: '© 2025 - U444 - All rights reserved',
+      continueButton: 'Tiếp tục',
+      tableNote: 'Vui lòng nhập số bàn để tiếp tục'
+    },
     {
       header: 'U444 trân trọng mọi <em>cảm nhận</em> của bạn',
       questionLabel: 'Câu hỏi 1',
@@ -62,13 +80,13 @@ const feedbackData = {
   ]
 };
 
-let currentStep = 1;
+let currentStep = 0;
 let currentLang = 'en';
 
 function showStep(stepIdx) {
   const steps = document.querySelectorAll('.step');
   steps.forEach((step, i) => {
-    step.classList.toggle('step-active', i === stepIdx - 1);
+    step.classList.toggle('step-active', i === stepIdx);
   });
   
   const langSwitch = document.querySelector('.lang-switch');
@@ -77,6 +95,10 @@ function showStep(stepIdx) {
   }
   
   renderFeedbackCard(stepIdx, currentLang);
+  
+  if (stepIdx === 0) {
+    setupTableNumberInput();
+  }
   
   if (stepIdx === 1 || stepIdx === 2) {
     updateNextButtonState();
@@ -91,16 +113,41 @@ function showStep(stepIdx) {
 
 function renderFeedbackCard(stepIdx, lang) {
   const steps = document.querySelectorAll('.step');
-  const step = steps[stepIdx - 1];
+  const step = steps[stepIdx];
   if (!step) return;
   
   const card = step.querySelector('.feedback-card');
   if (!card) return;
   
-  const data = feedbackData[lang][stepIdx - 1];
+  const data = feedbackData[lang][stepIdx];
   if (!data) return;
   
-  if (stepIdx === 1 || stepIdx === 2) {
+  if (stepIdx === 0) {
+    card.innerHTML = `
+      <header class="feedback-header">
+        <h2>${data.header}</h2>
+      </header>
+      <div class="feedback-logo">
+        <img src="assets/images/logo.png" alt="The BBQ House Logo" />
+      </div>
+      <div class="feedback-question">
+        <span class="question-label">${data.questionLabel}</span>
+        <h3>${data.question}</h3>
+      </div>
+      <div class="table-input-container" style="margin: 2rem 0; text-align: center;">
+        <input type="text" id="tableNumber" class="table-input" placeholder="${data.placeholder}" 
+      </div>
+      <div class="table-notification" style="text-align: center; color: #c04421; font-size: 0.9rem; min-height: 1.5rem; opacity: 0; transition: all 0.3s ease; transform: scale(1);">
+        ${data.tableNote}
+      </div>
+      <div class="step-nav">
+        <button class="continue-step">${data.continueButton}</button>
+      </div>
+      <footer class="feedback-footer">
+        <p>${data.footer}</p>
+      </footer>
+    `;
+  } else if (stepIdx === 1 || stepIdx === 2) {
     card.innerHTML = `
       <header class="feedback-header">
         <h2>${data.header}</h2>
@@ -209,14 +256,15 @@ function setupSubmitFeedback() {
         return false;
       }
       
-      if (currentStep === 2) {
-        const steps = document.querySelectorAll('.step');
-        const step = steps[currentStep - 1];
-        if (!step) return;
+             if (currentStep === 2) {
+         const steps = document.querySelectorAll('.step');
+         const step = steps[currentStep];
+         if (!step) return;
         
         const card = step.querySelector('.feedback-card');
         if (!card) return;
         const feedback = {
+          tableNumber: window._tableNumber || null,
           experience: (typeof window._step1Emoji === 'number') ? window._step1Emoji + 1 : null,
           flavor: (typeof window._step2Emoji === 'number') ? window._step2Emoji + 1 : null,
         };
@@ -233,12 +281,12 @@ function setupSubmitFeedback() {
             ? `<h2>Cảm ơn bạn đã phản hồi!</h2>
             <p>Ý kiến của bạn đã được ghi nhận.</p>
             <p></p>Nếu có bất kỳ điều gì khiến bạn không hài lòng, chúng tôi rất mong bạn 
-            <a href="tel:0989672344" style="color: green; text-decoration: underline;">nhấn vào đây</a> để chia sẻ ý kiến quý báu của mình.
+            <button id="zaloContactBtn" style="background: none; border: none; color: green; text-decoration: underline; cursor: pointer; font-size: inherit; padding: 0;">nhấn vào đây</button> để chia sẻ ý kiến quý báu của mình.
             `
             : `<h2>Thank you for your feedback!</h2>
             <p>Your response has been recorded.</p>
             <p>Should there be any aspect in which we fell short of your satisfaction, we would be most grateful if you would   
-            <a href="tel:0989672344" style="color: green; text-decoration: underline;">tap here</a> 
+            <button id="zaloContactBtn" style="background: none; border: none; color: green; text-decoration: underline; cursor: pointer; font-size: inherit; padding: 0;">tap here</button> 
             to share your invaluable feedback.</p>`;
                
           card.innerHTML = `
@@ -251,6 +299,39 @@ function setupSubmitFeedback() {
             <footer class="feedback-footer">
               <p>© 2025 - U444 - All rights reserved</p>
             </footer>`;
+
+          // Setup Zalo contact button
+          const zaloBtn = card.querySelector('#zaloContactBtn');
+          if (zaloBtn) {
+            zaloBtn.addEventListener('click', async function() {
+              try {
+                const tableNumber = window._tableNumber || 'Unknown';
+                const message = `CRM need to go to the guest ${tableNumber}`;
+                
+                if (window.zaloService && window.zaloService.sendMessage) {
+                  await window.zaloService.sendMessage(message);
+                  
+                  // Show success message
+                  const successMsg = currentLang === 'vi' 
+                    ? 'Tin nhắn đã được gửi thành công!' 
+                    : 'Message sent successfully!';
+                  alert(successMsg);
+                } else {
+                  console.error('Zalo service not available');
+                  const errorMsg = currentLang === 'vi' 
+                    ? 'Không thể gửi tin nhắn. Vui lòng thử lại.' 
+                    : 'Unable to send message. Please try again.';
+                  alert(errorMsg);
+                }
+              } catch (error) {
+                console.error('Error sending Zalo message:', error);
+                const errorMsg = currentLang === 'vi' 
+                  ? 'Lỗi khi gửi tin nhắn. Vui lòng thử lại.' 
+                  : 'Error sending message. Please try again.';
+                alert(errorMsg);
+              }
+            });
+          }
 
           const langSwitch = document.querySelector('.lang-switch');
           if (langSwitch) langSwitch.style.display = 'none';
@@ -301,18 +382,18 @@ function setupEmojiSelection() {
 
   refreshedItems.forEach((item, idx) => {
     item.addEventListener('click', function () {
-      refreshedItems.forEach((i, j) => {
-        i.classList.remove('selected');
-        const emoji = feedbackData[currentLang][currentStep - 1].emojis[j]; // Adjust index
-        const img = i.querySelector('img');
-        if (img && emoji) {
-          img.src = `assets/images/${emoji.icon}-light.png`;
-        }
-      });
+             refreshedItems.forEach((i, j) => {
+         i.classList.remove('selected');
+         const emoji = feedbackData[currentLang][currentStep].emojis[j]; // Use currentStep directly
+         const img = i.querySelector('img');
+         if (img && emoji) {
+           img.src = `assets/images/${emoji.icon}-light.png`;
+         }
+       });
 
-      item.classList.add('selected');
+       item.classList.add('selected');
 
-      const emoji = feedbackData[currentLang][currentStep - 1].emojis[idx]; // Adjust index
+       const emoji = feedbackData[currentLang][currentStep].emojis[idx]; // Use currentStep directly
       const img = item.querySelector('img');
       if (img && emoji) {
         img.src = `assets/images/${emoji.icon}-dark.png`;
@@ -325,7 +406,63 @@ function setupEmojiSelection() {
   });
 }
 
+function setupTableNumberInput() {
+  const currentStepElement = document.querySelector('.step.step-active');
+  if (!currentStepElement) return;
+  
+  const continueBtn = currentStepElement.querySelector('.continue-step');
+  const tableInput = currentStepElement.querySelector('#tableNumber');
+  const notification = currentStepElement.querySelector('.table-notification');
+  
+  if (continueBtn && tableInput) {
+    // Update button state when input changes
+    tableInput.addEventListener('input', function() {
+      const hasValue = tableInput.value.trim().length > 0;
+      continueBtn.disabled = !hasValue;
+      continueBtn.classList.toggle('disabled', !hasValue);
+      
+      // Show/hide notification based on input
+      if (notification) {
+        notification.style.opacity = hasValue ? '0' : '1';
+      }
+    });
+    
+    // Handle continue button click
+    continueBtn.addEventListener('click', function(e) {
+      const tableNumber = tableInput.value.trim();
+      
+      if (!tableNumber) {
+        // Show notification with pulse effect when clicked without input
+        if (notification) {
+          notification.style.opacity = '1';
+          notification.style.transform = 'scale(1.05)';
+          setTimeout(() => {
+            notification.style.transform = 'scale(1)';
+          }, 200);
+        }
+        e.preventDefault();
+        return false;
+      }
+      
+      // Store table number for later submission
+      window._tableNumber = tableNumber;
+      
+      if (currentStep === 0) {
+        currentStep = 1;
+        showStep(currentStep);
+      }
+    });
+    
+    // Set initial state
+    continueBtn.disabled = true;
+    continueBtn.classList.add('disabled');
+    if (notification) {
+      notification.style.opacity = '1';
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   setupLanguageSwitcher();
-  showStep(1);
+  showStep(0);
 }); 

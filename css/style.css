@@ -91,6 +91,17 @@ body {
   letter-spacing: 0.05em;
   font-weight: 600;
 }
+#tableNumber
+{
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #c04421;
+  font-size: 1rem;
+  color: #000000;
+  width: 50%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
 @font-face {
   font-family: 'SH Serif';
@@ -189,7 +200,6 @@ em {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  text-decoration: underline;
   border: 2px solid #c04421;
   border-radius: 8px;
 }
@@ -386,4 +396,21 @@ em {
   {
     font-size: 0.8rem;
   }
+}
+
+/* Table input styles */
+.table-input {
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.table-input:focus {
+  border-color: #a0361e !important;
+  box-shadow: 0 0 0 3px rgba(192, 68, 33, 0.1);
+  transform: scale(1.02);
+}
+
+.table-input:hover {
+  border-color: #a0361e;
 }
