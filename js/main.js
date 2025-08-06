@@ -276,6 +276,9 @@ function setupSubmitFeedback() {
           }
           
           await window.feedbackService.submitCustomerInfo(feedback);
+          
+          // Check for bad ratings and send Zalo message
+          await sendZaloMessageForBadRatings();
 
           const thankYou = currentLang === 'vi'
             ? `<h2>Cảm ơn bạn đã phản hồi!</h2>
@@ -459,6 +462,40 @@ function setupTableNumberInput() {
     if (notification) {
       notification.style.opacity = '1';
     }
+  }
+}
+
+// Function to send Zalo message when bad ratings are detected
+async function sendZaloMessageForBadRatings() {
+  try {
+    const tableNumber = window._tableNumber || 'Unknown';
+    const step1Emoji = window._step1Emoji; // 0 = bad, 1 = not-good, 2 = okay, 3 = good, 4 = wow
+    const step2Emoji = window._step2Emoji;
+    
+    const hasBadService = step1Emoji === 0; // Bad service rating
+    const hasBadFood = step2Emoji === 0; // Bad food rating
+    
+    // Only send message if there's at least one bad rating
+    if (hasBadService || hasBadFood) {
+      let message = `URGENT: Table ${tableNumber} - `;
+      
+      if (hasBadService && hasBadFood) {
+        message += "Both service and food rated as BAD!";
+      } else if (hasBadService) {
+        message += "Service rated as BAD!";
+      } else if (hasBadFood) {
+        message += "Food rated as BAD!";
+      }
+      
+      if (window.zaloService && window.zaloService.sendMessage) {
+        await window.zaloService.sendMessage(message);
+        console.log('Bad rating alert sent to Zalo successfully');
+      } else {
+        console.error('Zalo service not available for bad rating alert');
+      }
+    }
+  } catch (error) {
+    console.error('Error sending bad rating alert to Zalo:', error);
   }
 }
 
