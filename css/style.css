@@ -65,7 +65,7 @@ body {
 }
 
 .feedback-logo {
-  margin: 0.5rem 0 1.2rem 0;
+  margin: 0.5rem 0 0 0;
   display: flex;
   justify-content: center;
 }
@@ -76,7 +76,7 @@ body {
   object-fit: contain;
   border-radius: 16px;
   background: #FFF8ED;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 }
 
 .feedback-question {
@@ -206,6 +206,13 @@ em {
 
 .step-nav button:hover {
   font-weight: 700;
+}
+.signature p
+{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0 !important; 
 }
 @media (max-width: 1200px) {
   .feedback-demo-container

@@ -130,6 +130,9 @@ function renderFeedbackCard(stepIdx, lang) {
       <div class="feedback-logo">
         <img src="assets/images/logo.png" alt="The BBQ House Logo" />
       </div>
+      <div class="signature">
+        <p>UshiYoshi- Nggu Cat</p>
+      </div>
       <div class="feedback-question">
         <span class="question-label">${data.questionLabel}</span>
         <h3>${data.question}</h3>
@@ -154,6 +157,10 @@ function renderFeedbackCard(stepIdx, lang) {
       </header>
       <div class="feedback-logo">
         <img src="assets/images/logo.png" alt="The BBQ House Logo" />
+        
+      </div>
+      <div class="signature">
+        <p>UshiYoshi- Nggu Cat</p>
       </div>
       <div class="feedback-question">
         <span class="question-label">${data.questionLabel}</span>
@@ -295,6 +302,9 @@ function setupSubmitFeedback() {
           card.innerHTML = `
             <div class="feedback-logo">
               <img src="assets/images/logo.png" alt="The BBQ House Logo" />
+            </div>
+            <div class="signature">
+            <p>UshiYoshi- Nggu Cat</p>
             </div>
             <div style="text-align:center;padding:2rem 1rem 1rem 1rem;">
               ${thankYou}
